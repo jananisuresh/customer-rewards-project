@@ -1,23 +1,30 @@
 # Customer Rewards Project
 
-This project is a React application that calculates and displays customer reward points based on transaction amounts.
+## Overview
+
+This project calculates and displays customer reward points based on their transactions over a period of time. The application provides functionality to:
+
+- Fetch transaction data.
+- Calculate reward points based on specific rules.
+- Display transactions and rewards for each customer.
+- Handle loading and error states.
 
 ## Features
 
-- Calculates reward points based on transaction amounts.
-- Displays a table of transactions with corresponding reward points.
-- Allows manual input of transactions.
-- Handles loading and error states.
+- **Customer Rewards Calculation:** Calculates reward points based on the amount spent by customers.
+- **Transaction Display:** Shows transactions and accumulated rewards by customer.
+- **Loading State:** Displays a loading message while data is being fetched.
+- **Error Handling:** Displays an error message if data fetching fails.
 
-## Getting Started
+## Technologies Used
 
-### Prerequisites
+- **React:** A JavaScript library for building user interfaces.
+- **React Testing Library:** For testing React components.
+- **CSS:** For styling components.
 
-- Node.js installed on your machine.
-- npm or yarn as a package manager.
+## Setup Instructions
 
-### Installation
+1. **Clone the repository:**
 
-1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/customer-rewards-project.git
+   git clone https://github.com/jananisuresh/customer-rewards-project
