@@ -1,31 +1,43 @@
+// src/tests/CustomerRewards.test.js
+
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import CustomerRewards from '../components/CustomerRewards';
-
-const mockTransactions = [
-  {
-    transaction_id: '1',
-    customer_name: 'John Doe',
-    customer_id: 'C001',
-    purchased_product: 'Product A',
-    price: 100,
-    purchased_date: '2024-01-15'
-  }
-];
-
-const mockRewards = {
-  C001: 100
-};
+import { transactions } from '../data/mockData';
 
 test('renders customer rewards table', () => {
-  render(<CustomerRewards transactions={mockTransactions} rewards={mockRewards} />);
+  render(<CustomerRewards transactions={transactions} />);
 
-  // Check if table headers are rendered
-  expect(screen.getByText(/Month/i)).toBeInTheDocument();
-  expect(screen.getByText(/Customer ID/i)).toBeInTheDocument();
-  expect(screen.getByText(/Points/i)).toBeInTheDocument();
+  // Ensure the table has the correct number of rows
+  const rows = screen.getAllByRole('row');
+  expect(rows.length).toBe(transactions.length + 1); // +1 for the header row
 
-  // Check if customer data is rendered
-  expect(screen.getByText(/Jan 2024/i)).toBeInTheDocument();
-  expect(screen.getByText(/C001/i)).toBeInTheDocument();
-  expect(screen.getByText(/100/i)).toBeInTheDocument();
+  // Verify specific rows' content by querying the table
+  const rowsInTable = screen.getAllByRole('row');
+  
+  // Verify content in each row
+  expect(rowsInTable[1]).toHaveTextContent('Jan 2024');
+  expect(rowsInTable[1]).toHaveTextContent('Alice Johnson');
+  expect(rowsInTable[1]).toHaveTextContent('C001');
+  expect(rowsInTable[1]).toHaveTextContent('2250');
+
+  expect(rowsInTable[2]).toHaveTextContent('Jan 2024');
+  expect(rowsInTable[2]).toHaveTextContent('Bob Smith');
+  expect(rowsInTable[2]).toHaveTextContent('C002');
+  expect(rowsInTable[2]).toHaveTextContent('1450');
+
+  expect(rowsInTable[3]).toHaveTextContent('Feb 2024');
+  expect(rowsInTable[3]).toHaveTextContent('Alice Johnson');
+  expect(rowsInTable[3]).toHaveTextContent('C001');
+  expect(rowsInTable[3]).toHaveTextContent('150');
+
+  expect(rowsInTable[4]).toHaveTextContent('Mar 2024');
+  expect(rowsInTable[4]).toHaveTextContent('Charlie Brown');
+  expect(rowsInTable[4]).toHaveTextContent('C003');
+  expect(rowsInTable[4]).toHaveTextContent('1050');
+
+  expect(rowsInTable[5]).toHaveTextContent('Mar 2024');
+  expect(rowsInTable[5]).toHaveTextContent('Bob Smith');
+  expect(rowsInTable[5]).toHaveTextContent('C002');
+  expect(rowsInTable[5]).toHaveTextContent('250');
 });
