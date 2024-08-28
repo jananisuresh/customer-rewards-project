@@ -1,6 +1,3 @@
-const Logger = (message) => {
-    console.log(message);
-  };
-  
-  export default Logger;
-  
+// src/components/Logger.js
+const Logger = () => null; // Placeholder component
+export default Logger;

@@ -1,0 +1,51 @@
+/* src/styles/CustomerRewards.css */
+.header {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.customer-rewards {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.customer-rewards-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #333; /* Outer border for the table */
+}
+
+.customer-rewards-table th, .customer-rewards-table td {
+  border: 1px solid #333; /* Darker border for table cells */
+  padding: 8px;
+  text-align: left;
+}
+
+.customer-rewards-table th {
+  background-color: #f4f4f4;
+}
+
+/* Darker borders for each month */
+.customer-rewards-table tr.month-row td {
+  border-top: 2px solid #333;
+}
+
+/* Optional: Add border for the first column to distinguish it */
+.customer-rewards-table td:first-child,
+.customer-rewards-table th:first-child {
+  border-left: 2px solid #333; /* Darker border for the first column */
+}
+
+/* Optional: Add border for the last column to distinguish it */
+.customer-rewards-table td:last-child,
+.customer-rewards-table th:last-child {
+  border-right: 2px solid #333; /* Darker border for the last column */
+}
+
+/* Alternate row color for better readability */
+.customer-rewards-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

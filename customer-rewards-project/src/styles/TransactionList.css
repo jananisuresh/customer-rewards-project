@@ -1,0 +1,12 @@
+/* src/styles/TransactionList.css */
+ul {
+  list-style-type: none; /* Removes dots or bullets */
+  padding: 0;
+  margin: 0; /* Ensure no extra space around the list */
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  margin: 0; /* Ensure no extra space around list items */
+}

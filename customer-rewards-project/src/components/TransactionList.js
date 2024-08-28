@@ -1,21 +1,17 @@
+// src/components/TransactionList.js
 import React from 'react';
 
 const TransactionList = ({ transactions }) => {
+  if (!Array.isArray(transactions)) {
+    return <div>Error: transactions is not an array</div>;
+  }
+
   return (
-    <div className="transaction-list">
-      {Object.keys(transactions).map((customer) => (
-        <div key={customer}>
-          <h3>Customer: {customer}</h3>
-          <ul>
-            {transactions[customer].map((transaction, index) => (
-              <li key={index}>
-                Month: {transaction.month}, Points: {transaction.points}
-              </li>
-            ))}
-          </ul>
-        </div>
+    <ul>
+      {transactions.map(transaction => (
+        <li key={transaction.transaction_id}>{transaction.description}</li>
       ))}
-    </div>
+    </ul>
   );
 };
 

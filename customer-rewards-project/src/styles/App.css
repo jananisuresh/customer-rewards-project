@@ -1,0 +1,15 @@
+/* src/styles/App.css */
+
+/* Make sure no unintended list styles are applied globally */
+ul, ol {
+    list-style-type: none; /* Removes bullets or dots from lists */
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Optional: Ensure no unintended borders or backgrounds */
+  body {
+    border: none;
+    background: none;
+  }
+  
